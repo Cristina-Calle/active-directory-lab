@@ -1,146 +1,123 @@
-# Active Directory Lab - TechSolutions S.L.
+Active Directory Lab - TechSolutions S.L.
+🚀 Badges del proyecto
 
-## Descripción del proyecto
+Aquí tienes una cabecera estilo GitHub profesional:
 
-Este proyecto simula un entorno empresarial completo basado en Windows Server 2022, con el objetivo de recrear una infraestructura de red corporativa realista orientada a la administración de sistemas. Cuenta con un cliente conectado al dominio Windows 10
+🟦 Windows Server 2022: Windows Server 2022
+🟨 Active Directory: Active Directory
+🟩 DNS Service: DNS
+🟧 DHCP Service: DHCP
+🟪 GPO Policies: Group Policy
+🟫 File Server: File Server
+⚙️ Virtualization: VirtualBox
+📌 Descripción del proyecto
 
-Incluye la implementación de servicios fundamentales como Active Directory, DNS, DHCP y servidor de archivos, además de la gestión de usuarios, grupos, políticas de seguridad y permisos.
+Este proyecto simula un entorno empresarial real basado en Windows Server 2022, diseñado para recrear una infraestructura de red corporativa completa.
 
-El objetivo principal es desarrollar habilidades prácticas en administración de sistemas Windows y entornos corporativos.
+Incluye la implementación de servicios esenciales como:
 
----
+Active Directory Domain Services (AD DS)
+DNS integrado
+DHCP para asignación automática de IPs
+Servidor de archivos con permisos NTFS
+Políticas de seguridad centralizadas mediante GPO
 
-## Empresa simulada
+El objetivo es replicar un entorno real de administración de sistemas en empresa.
 
-TechSolutions S.L. es una empresa ficticia dedicada al desarrollo de software y soporte tecnológico. Todo el entorno del laboratorio se ha diseñado bajo esta estructura organizativa para simular un entorno real de producción.
+🏢 Empresa simulada
 
----
+TechSolutions S.L. es una empresa ficticia creada para estructurar el laboratorio como un entorno corporativo real, con departamentos, usuarios y políticas diferenciadas.
 
-## Objetivo del laboratorio
+🎯 Objetivos del laboratorio
+Implementación de un dominio corporativo
+Administración centralizada de usuarios y grupos
+Diseño de estructura organizativa (OU)
+Configuración de servicios de red empresariales
+Aplicación de políticas de seguridad (GPO)
+Control de accesos a recursos compartidos
+🧱 Arquitectura del sistema
+Red interna: 192.168.10.0/24
 
-Diseñar e implementar una infraestructura completa que incluya:
-
-- Controlador de dominio
-- Gestión de usuarios y grupos
-- Unidades organizativas (OU)
-- Políticas de grupo (GPO)
-- Servicio DNS integrado con Active Directory
-- Servicio DHCP para asignación automática de direcciones IP
-- Servidor de archivos con permisos por departamento
-- Cliente Windows unido al dominio
-
----
-
-## Arquitectura del sistema
-
-Cliente Windows 10 (TS-CLI01)  
-│  
-Red interna: 192.168.10.0/24  
-│  
-Servidor Windows Server 2022 (TS-DC01)  
-- Active Directory Domain Services  
-- DNS  
-- DHCP  
-- File Server  
-- Group Policy Objects (GPO)  
-
----
-
-## Tecnologías utilizadas
-
-- Windows Server 2022  
-- Active Directory Domain Services (AD DS)  
-- DNS Server  
-- DHCP Server  
-- Windows 11 Pro  
-- Group Policy Objects (GPO)  
-- NTFS Permissions  
-- Virtualización (VirtualBox)
-
----
-
-## Estructura del dominio
+┌──────────────────────────────────────┐
+│ Windows Server 2022 (TS-DC01)        │
+│ Domain Controller                    │
+│ AD DS | DNS | DHCP | File Server     │
+│ GPO Management                       │
+└───────────────┬──────────────────────┘
+                │
+                ▼
+┌──────────────────────────────────────┐
+│ Windows Client (TS-CLI01)            │
+│ Unido al dominio                     │
+└──────────────────────────────────────┘
+⚙️ Tecnologías utilizadas
+Windows Server 2022
+Active Directory Domain Services
+DNS Server
+DHCP Server
+Group Policy Objects (GPO)
+Windows 10 / 11 Client
+NTFS Permissions
+VirtualBox
+🏗️ Estructura del dominio
 
 Dominio: techsolutions.local
 
-Departamentos implementados:
+Departamentos:
+IT
+Recursos Humanos
+Finanzas
+Dirección
+Usuarios:
+Laura Gómez
+Miguel Ruiz
+Ana Torres
+David Martín
+Marta López
+Carlos Sánchez
+Sergio Romero
+Elena Díaz
+🔐 Políticas de grupo (GPO)
+Bloqueo de Panel de control
+Restricción de CMD
+Políticas de contraseñas seguras
+Mensaje corporativo de inicio de sesión
+Restricciones de configuración de usuario
+🧪 Evidencias del laboratorio
 
-- IT  
-- Recursos Humanos  
-- Finanzas  
-- Dirección  
-
-Usuarios creados:
-
-- Laura Gómez  
-- Miguel Ruiz  
-- Ana Torres  
-- David Martín  
-- Marta López  
-- Carlos Sánchez  
-- Sergio Romero  
-- Elena Díaz  
-
----
-
-## Políticas de grupo (GPO)
-
-Se han implementado políticas de seguridad y configuración centralizada, incluyendo:
-
-- Restricción de acceso al Panel de control  
-- Bloqueo de consola CMD  
-- Políticas de contraseñas seguras  
-- Mensaje de bienvenida corporativo  
-- Restricciones de configuración de usuario  
-
----
-
-## Servicios implementados
-
-### Active Directory
-- Creación de dominio corporativo
-- Gestión de usuarios, grupos y OU
-- Estructura organizativa empresarial
-
-### DNS
-- Resolución de nombres internos
-- Integración con Active Directory
-
-### DHCP
-- Asignación automática de direcciones IP
-- Configuración de red centralizada para clientes
-
-### File Server
-- Carpetas compartidas por departamento
-- Control de acceso mediante permisos NTFS
-
----
-
-## Evidencias
-
-Las capturas del proyecto se encuentran en la carpeta:
+Las capturas están organizadas en la carpeta:
 
 screenshots/
+Flujo del proyecto:
+01_server_manager.png → Configuración inicial del servidor
+02_active_directory.png → Active Directory configurado
+03_usuarios_ou.png → Usuarios y OU creadas
+04_cliente_dominio.png → Cliente unido al dominio
+05_gpo.png → Configuración de GPO
+gpo_funcionando.png → Validación de políticas
+06_dhcp.png → Configuración DHCP
+07_carpetas_compartidas.png → File Server
+comprobacion_dns_cliente.png → Validación DNS desde cliente
+📊 Resultado final
 
-Incluyen la configuración del servidor, Active Directory, GPOs, DHCP, DNS y validación del cliente unido al dominio.
+Se ha implementado una infraestructura corporativa funcional que simula un entorno empresarial real.
 
----
+Este proyecto demuestra habilidades en:
 
-## Resultado final
+Administración de sistemas Windows Server
+Gestión de infraestructura de red
+Active Directory y administración de identidades
+Seguridad mediante políticas de grupo
+Servicios de red corporativos (DNS/DHCP)
+Control de acceso a recursos compartidos
+🚀 Mejoras futuras
+Múltiples controladores de dominio (redundancia)
+Segmentación de red (VLANs)
+Automatización con PowerShell
+Auditoría avanzada de seguridad
+Backup de Active Directory
+Integración con Linux clients
+👤 Autor
 
-Se ha implementado una infraestructura completa de red empresarial simulada, replicando un entorno real de administración de sistemas Windows.
-
-El proyecto demuestra competencias en:
-
-- Administración de sistemas Windows Server  
-- Servicios de red empresariales  
-- Gestión de identidades (Active Directory)  
-- Seguridad mediante políticas de grupo  
-- Control de acceso a recursos compartidos  
-
----
-
-## Autor
-
-Cristina Calle  
-Proyecto de laboratorio personal orientado al desarrollo profesional en administración de sistemas.
+Cristina Calle
+Proyecto personal orientado a administración de sistemas y entornos Windows Server.
